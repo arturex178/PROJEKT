@@ -23,9 +23,13 @@ public class Witcher extends AUnit{
     }
 
     @Override
-    public void special() {
+    public void special()
+    {
 
+    }
 
+    public void move()
+    {
 
     }
 

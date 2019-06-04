@@ -37,18 +37,24 @@ public abstract class AProperties{
     }
 
 
-    void setPositionX(int positionX) {
+    public void setPositionX(int positionX)
+    {
         this.positionX = positionX;
     }
-    int getPositionX() {
+    public int getPositionX()
+    {
         return this.positionX;
 
     }
-    void setPositionY(int positionY) {
+    public void setPositionY(int positionY)
+    {
         this.positionY = positionY;
     }
-    int getPositionY() {
+    public int getPositionY()
+    {
         return this.positionY;
     }
+
+
 }
 
