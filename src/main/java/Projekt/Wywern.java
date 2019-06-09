@@ -8,10 +8,8 @@ public class Wywern extends AUnit implements ISpecial{
         this.setDmgDown(20);
         this.setDmgUp(35);
         }
-
     @Override
     public void special() {
-
 
     }
 

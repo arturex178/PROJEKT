@@ -1,6 +1,8 @@
 package Projekt;
 
 
+import org.newdawn.slick.opengl.Texture;
+
 public abstract class AProperties{
 
     private int HP;

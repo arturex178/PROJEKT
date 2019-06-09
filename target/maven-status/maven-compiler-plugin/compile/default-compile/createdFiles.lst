@@ -1,6 +1,7 @@
 Projekt\Leshen.class
 Projekt\Map.class
 Projekt\Drowner.class
+Projekt\Construct.class
 Projekt\Witcher.class
 Projekt\AUnit.class
 Projekt\Sword.class
@@ -10,4 +11,5 @@ Projekt\Main.class
 Projekt\Randomize.class
 Projekt\Wywern.class
 Projekt\ISpecial.class
+Projekt\Boot.class
 Projekt\Ghoul.class
