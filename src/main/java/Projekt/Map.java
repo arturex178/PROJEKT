@@ -65,6 +65,10 @@ public class Map {
                     }
                 }
             }
+            System.out.println(field[4] instanceof Ghoul);
+            System.out.println(field[4] instanceof Drowner);
+            System.out.println(field[4] instanceof Wywern);
+            System.out.println(field[4] instanceof Leshen);
         }
 }
 

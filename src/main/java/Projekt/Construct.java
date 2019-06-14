@@ -35,21 +35,53 @@ public class Construct{
     }
 
 
-    public static void drawQuad(int x , int y, int width, int height)
+    public static void drawBackgroundQuad(Texture tex, int x , int y, int width, int height)
     {
+        tex.bind();
+        glTranslatef( x, y, 0);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glBegin(GL_QUADS);
-        glVertex2f(x,y);
-        glVertex2f(x+width,y);
-        glVertex2f(x+width,y+height);
-        glVertex2f(x,y+height);
+        glTexCoord2f(0, 0);
+        glVertex2f(0,0);
+        glTexCoord2f(1, 0);
+        glVertex2f(width,0);
+        glTexCoord2f(1, 1);
+        glVertex2f(width,height);
+        glTexCoord2f(0, 1);
+        glVertex2f(0,height);
         glEnd();
         glLoadIdentity();
+    }
+
+
+
+    public static void drawTransparentQuad(Texture tex, int x , int y, int width, int height)
+    {
+        tex.bind();
+        glTranslatef( x, y, 0);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex2f(0,0);
+        glTexCoord2f(1, 0);
+        glVertex2f(width,0);
+        glTexCoord2f(1, 1);
+        glVertex2f(width,height);
+        glTexCoord2f(0, 1);
+        glVertex2f(0,height);
+        glEnd();
+        glLoadIdentity();
+
     }
 
     public static void drawTexQuad(Texture tex, int x , int y, int width, int height)
     {
         tex.bind();
         glTranslatef( x, y, 0);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         glBegin(GL_QUADS);
         glTexCoord2f(0, 0);
         glVertex2i( 0, 0);

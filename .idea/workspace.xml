@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e652cb4-4a5c-46af-801e-124b73c28100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/artur.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/lwjgl64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/slick-util.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Projekt/Boot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Projekt/Construct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/AProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/AProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Boot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Boot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Construct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Construct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Randomize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Randomize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Projekt/Wywern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projekt/Wywern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Projekt/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Projekt/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Projekt/AProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/AProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Projekt/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Projekt/Boot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/Boot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Projekt/Construct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/Construct.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Projekt/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Projekt/Wywern.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Projekt/Wywern.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textures/Witcher_Texture.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -56,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Boot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+            <state relative-caret-position="205">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="749">
+              <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -77,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Construct.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+            <state relative-caret-position="205">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,6 +84,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/ISpecial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -102,6 +100,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Singleton" />
       </list>
     </option>
   </component>
@@ -123,7 +122,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Potion.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Sword.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Witcher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Projekt/ISpecial.java" />
         <option value="$PROJECT_DIR$/src/test/java/Projekt/AppTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/AProperties.java" />
@@ -131,9 +129,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Wywern.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Randomize.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Projekt/Construct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Projekt/ISpecial.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Map.java" />
         <option value="$PROJECT_DIR$/src/main/java/Projekt/Boot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Projekt/Construct.java" />
+        <option value="$PROJECT_DIR$/../src/main.java" />
       </list>
     </option>
   </component>
@@ -169,7 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -208,6 +207,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,10 +301,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18993288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19261745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -313,7 +313,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3045326" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3045326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -368,13 +368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Witcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Sword.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -420,13 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/ISpecial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/AProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -455,20 +441,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Construct.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/ISpecial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Map.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Witcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="505">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -479,20 +462,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="70" column="59" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Boot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        <state relative-caret-position="205">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Construct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Singleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Projekt/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
