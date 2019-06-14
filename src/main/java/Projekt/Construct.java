@@ -56,7 +56,7 @@ public class Construct{
 
 
 
-    public static void drawTransparentQuad(Texture tex, int x , int y, int width, int height)
+    public static void drawTransparentQuad(Texture tex, float x , float y, int width, int height)
     {
         tex.bind();
         glTranslatef( x, y, 0);
@@ -95,9 +95,10 @@ public class Construct{
         glLoadIdentity();
     }
 
-    public static Texture LoadTexture(String path, String fileType)
+    public static Texture LoadTexture(String path, String fileType, boolean buildable)
     {
         Texture tex = null;
+
         InputStream in = ResourceLoader.getResourceAsStream(path);
         try {
             tex = TextureLoader.getTexture(fileType, in);

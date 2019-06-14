@@ -36,9 +36,9 @@ public class Map {
                     if (MAP.length >= 1) {
                         currentPosition = MAP[x][y];
                         if (currentPosition >= 50 && currentPosition < 66) {
-                            field[howMany] = new Drowner();
-                            field[howMany].setPositionX(x);
-                            field[howMany].setPositionY(y);
+                           // field[howMany] = new Drowner();
+                           // field[howMany].setPositionX(x);
+                           // field[howMany].setPositionY(y);
                             howMany++;
 
                         } else if (currentPosition >= 66 && currentPosition < 81) {

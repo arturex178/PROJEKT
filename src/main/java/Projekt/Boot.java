@@ -15,16 +15,23 @@ public class Boot {
     public Boot() {
         beginSession();
 
-        Texture WywernTex = LoadTexture("textures/Wywern_Texture.jpg", "JPG");
+
+        Tile WitcherTile = new Tile(0,0,64,64,TileType.Witcher);
+        Tile SwordTile = new Tile(0,0,64,64,TileType.Sword);
+        Tile DrownerTile = new Tile(0,0,64,64,TileType.Drowner);
+
+  /*      Texture WywernTex = LoadTexture("textures/Wywern_Texture.jpg", "JPG");
         Texture DrownerTex = LoadTexture("textures/Drowner_Texture.jpg", "JPG");
-        Texture GhoulTex = LoadTexture("textures/Ghoul_Texture.jpg", "JPG");
         Texture LeshenTex = LoadTexture("textures/Leshen_Texture.jpg", "JPG");
-        Texture background_1 = LoadTexture("textures/Background_1.png", "PNG");
-        Texture background_2 = LoadTexture("textures/Background_2.png", "PNG");
-        Texture background_3 = LoadTexture("textures/Background_3.jpg", "JPG");
-        Texture background_4 = LoadTexture("textures/Background_4.jpg", "JPG");
+
         Texture SwordTex = LoadTexture("textures/Sword_3.png", "PNG");
         Texture WitcherTex = LoadTexture("textures/Witcher_Texture.png", "PNG");
+*/
+
+        Texture background_4 = LoadTexture("textures/Background_4.jpg", "JPG", true);
+
+        Drowner drowner = new Drowner(DrownerTile.getTexture(),10*64, 10*64, 64, 64, 5f);
+
 
         while (!Display.isCloseRequested()) {
 
@@ -35,16 +42,14 @@ public class Boot {
                         currentPosition=mainMap.MAP[x][y];
 
                         if (currentPosition >= 50 && currentPosition < 66) {
-
-                            drawTexQuad(DrownerTex, y * 64, x * 64, 64, 64);
-
+                           // DrownerTile.Draw(64*x,64*y);
                         } else if (currentPosition >= 66 && currentPosition < 81) {
-                            //drawTexQuad(SwordTex, y * 64, x * 64, 64, 64);
-                            drawTransparentQuad(WitcherTex, y * 64, x * 64, 64, 64);
+                            WitcherTile.Draw(64*x,64*y);
                         } else if (currentPosition >= 81 && currentPosition < 91) {
-                            drawTexQuad(LeshenTex, y * 64, x * 64, 64, 64);
+                            SwordTile.Draw(64*x,64*y);
+                         //   drawTexQuad(LeshenTex, y * 64, x * 64, 64, 64);
                         } else if (currentPosition >= 91 && currentPosition < 101) {
-                            drawTexQuad(WywernTex, y * 64, x * 64, 64, 64);
+                         //   drawTexQuad(WywernTex, y * 64, x * 64, 64, 64);
                         }
                         //else drawTexQuad(background_2, y * 64, x * 64, 64, 64);
 
@@ -52,6 +57,11 @@ public class Boot {
 
                 }
             }
+
+            Clock.update();
+            drowner.Draw();
+            drowner.Update();
+
 
             Display.update();
             Display.sync(60);
