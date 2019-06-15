@@ -10,7 +10,10 @@ public class Wywern extends AUnit implements ISpecial{
         }
     @Override
     public void special() {
-
+        if(this.getHP()<50){
+            setDmgUp(10);
+            setDmgDown(15);
+        }
     }
 
 }

@@ -2,14 +2,13 @@ package Projekt;
 
 public class Drowner extends AUnit implements ISpecial{
 
-
     public Drowner()
     {
         this.setHP(40);
         this.setDmgUp(13);
         this.setDmgDown(8);
-    }
 
+    }
 
     public void special() {
         if(this.getHP()<20) {
@@ -17,6 +16,7 @@ public class Drowner extends AUnit implements ISpecial{
             setDmgDown(10);
         }
     }
+
 }
 
 
