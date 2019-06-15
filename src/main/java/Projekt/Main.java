@@ -9,6 +9,7 @@ public class Main
     {
         mainMap = new Map();
         mainMap.randomizeMap();
+        mainMap.Print();
         new Boot();
 
     }
