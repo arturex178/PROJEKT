@@ -3,7 +3,7 @@ package Projekt;
 public enum TileType
 {
 
-    Witcher("textures/Witcher_Texture.png", "PNG", true),
+    Witcher("textures/Witcher_Texture_Aure.png", "PNG", true),
     Wywern("textures/Wywern_Texture.jpg", "JPG", true),
     Ghoul("textures/Ghoul_Texture.jpg", "JPG", true),
     Drowner("textures/Drowner_Texture.jpg", "JPG", true),

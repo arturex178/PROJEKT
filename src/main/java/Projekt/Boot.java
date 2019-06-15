@@ -23,9 +23,9 @@ public class Boot{
         Tile GhoulTile = new Tile(0,0,64,64,TileType.Ghoul);
         Texture background_4 = LoadTexture("textures/Background_4.jpg", "JPG", true);
 
-        Witcher witcher = new Witcher(WitcherTile.getTexture(),0, 0, 64, 64, 1f);
-
-        while (!Display.isCloseRequested() && result) {
+        Witcher witcher = new Witcher(WitcherTile.getTexture(),10, 10, 64, 64, 1f);
+        System.out.println("HP" + witcher.getHP());
+        while (!Display.isCloseRequested()) {
             drawBackgroundQuad(background_4, 0,0,2064,2064);
                 for (int x = 0; x < 20; x++) {
                     for (int y = 0; y < 20; y++) {
@@ -48,8 +48,8 @@ public class Boot{
                 Clock.update();
                 witcher.Draw();
                 witcher.move();
-                result = witcher.interact();
-                System.out.println(result);
+                System.out.print(witcher.getPositionX() + "  " + witcher.getPositionY() + "<- witcher");
+                witcher.interact();
                 Display.update();
                 Display.sync(1);
 

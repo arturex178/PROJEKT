@@ -16,7 +16,7 @@ public class Witcher extends AUnit{
 
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
-        this.setHP(500);
+        this.setHP(5000);
         this.setDmgDown(9);
         this.setDmgUp(12);
         this.setHP(40);
@@ -64,8 +64,7 @@ public class Witcher extends AUnit{
             enemy.setHP(enemy.getHP() - this.decideDmg());
             this.setHP(this.getHP() - enemy.decideDmg());
         }
-        if(this.getHP()<=0)return true;
-        else return false;
+        return this.ifAlive();
     }
 
     @Override
@@ -113,19 +112,20 @@ public class Witcher extends AUnit{
     }
 
     public boolean interact(){
-
+        boolean result;
         System.out.println("A");
             for(int i = 0; i < 400; i++)
             {
-                System.out.println(i + "B");
-                if(mainMap.field[i].getPositionX() == this.getPositionX() && mainMap.field[i].getPositionY() == this.getPositionY() && mainMap.field[i]!=null)
+                if(mainMap.field[i] != null && mainMap.field[i].getPositionX() == this.getPositionX() &&
+                        mainMap.field[i].getPositionY() == this.getPositionY() && mainMap.field[i]!=null)
                 {
                     System.out.println("C");
-                    if(mainMap.field[i] instanceof AUnit){
+                    if(mainMap.field[i] instanceof AUnit && mainMap.field[i] != null){
                         System.out.println("D");
-                        fight((AUnit)mainMap.field[i]);
-                        //return !this.fight((AUnit)mainMap.field[i]);
-
+                        result = fight((AUnit)mainMap.field[i]);
+                        System.out.println("After fight");
+                        mainMap.MAP[getPositionX()][getPositionY()]=1;
+                        return result;
                     }
                     if(mainMap.field[i] instanceof Potion) {
                     this.setNumberOfPotions(getNumberOfPotions() + 1);
