@@ -1,9 +1,9 @@
 package Projekt;
-
+import java.util.Random;
 
 
 public class Map {
-
+    Random rnd = new Random();
     public int mainSize = 20;
     public int[][] MAP = new int[mainSize][mainSize];
     public AProperties[] field = new AProperties[mainSize * mainSize];
@@ -20,7 +20,23 @@ public class Map {
                 for (int y = 0; y < MAP[x].length; y++) {
                     if (MAP.length >= 1) {
                         currentPosition = MAP[x][y];
-                        if (currentPosition >= 50 && currentPosition < 66) {
+                        if(currentPosition >=0 && currentPosition <25){
+                            field[howMany] = new Potion();
+                            field[howMany].setPositionX(x);
+                            field[howMany].setPositionY(y);
+                            howMany++;
+
+                        }
+                        if(currentPosition >=25 && currentPosition <50){
+                            int dmgDown;
+                            dmgDown = 10 + rnd.nextInt(41);
+                            field[howMany] = new Sword(dmgDown,dmgDown + rnd.nextInt(10)+5);
+                            field[howMany].setPositionX(x);
+                            field[howMany].setPositionY(y);
+                            howMany++;
+
+                        }
+                        else if (currentPosition >= 50 && currentPosition < 66) {
                             field[howMany] = new Drowner();
                             field[howMany].setPositionX(x);
                             field[howMany].setPositionY(y);

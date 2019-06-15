@@ -5,6 +5,7 @@ import java.util.Random;
 
 import static Projekt.Clock.Delta;
 import static Projekt.Construct.drawTransparentQuad;
+import static Projekt.Main.main;
 import static Projekt.Main.mainMap;
 
 public class Witcher extends AUnit{
@@ -13,7 +14,6 @@ public class Witcher extends AUnit{
     private int width, height;
     private float speed;
     private Texture texture;
-
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
         this.setHP(5000);
@@ -30,7 +30,9 @@ public class Witcher extends AUnit{
         this.speed = speed;
     }
 
- /*   public void Update() {
+
+
+    /*   public void Update() {
         if (first)
             first = false;
         else
@@ -124,6 +126,9 @@ public class Witcher extends AUnit{
                         System.out.println("D");
                         result = fight((AUnit)mainMap.field[i]);
                         System.out.println("After fight");
+                        if(result){
+                            mainMap.field[i] = null;
+                        }
                         mainMap.MAP[getPositionX()][getPositionY()]=1;
                         return result;
                     }
@@ -132,10 +137,17 @@ public class Witcher extends AUnit{
 
                     return true;
                     }
-                    if(mainMap.field[i] instanceof Sword);
+                    if(mainMap.field[i] instanceof Sword) {
+                        if((float)(mainMap.field[i].getDmgUp() - mainMap.field[i].getDmgDown()) /2 >
+                                (float)(this.getDmgUp() - this.getDmgDown()) /2){
+                            this.setDmgUp(mainMap.field[i].getDmgUp());
+                            this.setDmgDown(mainMap.field[i].getDmgDown());
+                        }
+                    }
+                    }
                     return true;
                 }
-            }
+
             return true;
         }
 
