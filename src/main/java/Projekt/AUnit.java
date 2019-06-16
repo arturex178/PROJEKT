@@ -17,7 +17,7 @@ public abstract class AUnit extends AProperties implements ISpecial {
     @Override
     public int decideDmg()
     {
-        return (this.getDmgDown() + rnd.nextInt(this.getDmgUp()-this.getDmgDown()+1));
+        return (this.getDmgDown() + rnd.nextInt((this.getDmgUp() - this.getDmgDown())+1));
     }
 
 }

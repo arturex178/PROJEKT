@@ -12,10 +12,9 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Construct{
 
-    final static int size = 20;
 
 
-    public static void beginSession()
+    public static void beginSession(int size)
     {
         Display.setTitle("Simulation");
         try {

@@ -8,8 +8,8 @@ public enum TileType
     Ghoul("textures/Ghoul_Texture.jpg", "JPG", true),
     Drowner("textures/Drowner_Texture.jpg", "JPG", true),
     Leshen("textures/Leshen_Texture.jpg", "JPG", true),
-    Potion("textures/Potion.jpg", "JPG", true),
-    Sword("textures/Sword_Texture.png", "PNG", true),
+    Potion("textures/Potion_Texture.png", "PNG", true),
+    Sword("textures/Sword.png", "PNG", true),
     Background("textures/Background_4.jpg", "JPG", true);
 
     String textureName;

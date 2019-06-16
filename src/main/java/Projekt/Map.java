@@ -20,7 +20,7 @@ public class Map {
                 for (int y = 0; y < MAP[x].length; y++) {
                     if (MAP.length >= 1) {
                         currentPosition = MAP[x][y];
-                        if(currentPosition >=0 && currentPosition <25){
+                        if(currentPosition >0 && currentPosition <25){
                             field[howMany] = new Potion();
                             field[howMany].setPositionX(x);
                             field[howMany].setPositionY(y);

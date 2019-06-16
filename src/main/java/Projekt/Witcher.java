@@ -16,12 +16,9 @@ public class Witcher extends AUnit{
     private Texture texture;
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
-        this.setHP(5000);
+        this.setHP(100);
         this.setDmgDown(9);
         this.setDmgUp(12);
-        this.setHP(40);
-        this.setDmgUp(13);
-        this.setDmgDown(8);
         this.setPositionX(startPositionX);
         this.setPositionY(startPositionY);
         this.texture = texture;
@@ -115,37 +112,38 @@ public class Witcher extends AUnit{
 
     public boolean interact(){
         boolean result;
-        System.out.println("A");
             for(int i = 0; i < 400; i++)
             {
                 if(mainMap.field[i] != null && mainMap.field[i].getPositionX() == this.getPositionX() &&
-                        mainMap.field[i].getPositionY() == this.getPositionY() && mainMap.field[i]!=null)
+                        mainMap.field[i].getPositionY() == this.getPositionY())
                 {
-                    System.out.println("C");
                     if(mainMap.field[i] instanceof AUnit && mainMap.field[i] != null){
-                        System.out.println("D");
                         result = fight((AUnit)mainMap.field[i]);
-                        System.out.println("After fight");
+                        //System.out.println("After fight");
                         if(result){
                             mainMap.field[i] = null;
                         }
-                        mainMap.MAP[getPositionX()][getPositionY()]=1;
+                        mainMap.MAP[getPositionX()][getPositionY()]=0;
                         return result;
                     }
                     if(mainMap.field[i] instanceof Potion) {
                     this.setNumberOfPotions(getNumberOfPotions() + 1);
-
+                    //System.out.println("potion");
+                        mainMap.MAP[getPositionX()][getPositionY()]=0;
                     return true;
                     }
                     if(mainMap.field[i] instanceof Sword) {
-                        if((float)(mainMap.field[i].getDmgUp() - mainMap.field[i].getDmgDown()) /2 >
-                                (float)(this.getDmgUp() - this.getDmgDown()) /2){
+                        System.out.println("sword");
+                        if((mainMap.field[i].getDmgUp() - mainMap.field[i].getDmgDown()) /2 >
+                                (this.getDmgUp() - this.getDmgDown()) /2){
+                            System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
                             this.setDmgUp(mainMap.field[i].getDmgUp());
                             this.setDmgDown(mainMap.field[i].getDmgDown());
                         }
+                        mainMap.MAP[getPositionX()][getPositionY()]=0;
+
                     }
                     }
-                    return true;
                 }
 
             return true;
