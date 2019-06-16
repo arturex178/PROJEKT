@@ -16,7 +16,7 @@ public class Witcher extends AUnit{
     private Texture texture;
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
-        this.setHP(100);
+        this.setHP(5000);
         this.setDmgDown(9);
         this.setDmgUp(12);
         this.setPositionX(startPositionX);

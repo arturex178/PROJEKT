@@ -4,12 +4,12 @@ public enum TileType
 {
 
     Witcher("textures/Witcher_Texture_Aure.png", "PNG", true),
-    Wywern("textures/Wywern_Texture.jpg", "JPG", true),
-    Ghoul("textures/Ghoul_Texture.jpg", "JPG", true),
+    Wywern("textures/Wyvern_Texture_Aure.png", "PNG", true),
+    Ghoul("textures/Ghoul_Texture_Aure.png", "PNG", true),
     Drowner("textures/Drowner_Texture.jpg", "JPG", true),
     Leshen("textures/Leshen_Texture.jpg", "JPG", true),
     Potion("textures/Potion_Texture.png", "PNG", true),
-    Sword("textures/Sword.png", "PNG", true),
+    Sword("textures/Sword_Texture_Aure.png", "PNG", true),
     Background("textures/Background_4.jpg", "JPG", true);
 
     String textureName;
