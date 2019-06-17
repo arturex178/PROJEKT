@@ -7,14 +7,19 @@ import org.newdawn.slick.opengl.Texture;
 import static Projekt.Construct.*;
 import static Projekt.Main.mainMap;
 
-
+/**
+ * Klasa, której konstruktor podejmuje sekwencyjne wykonywanie motod
+ * dotyczących interakcji obiektu klasy <code>Witcher</code>, jego poruszania się i drukowania na mapę akutalnie istniejących obiektów.
+ */
 public class Boot{
 
-    int currentPosition;
-    boolean result = true;
-    boolean first = true;
+    private int currentPosition;
+    private boolean result = true;
+    private boolean first = true;
 
-
+    /**
+     * Konstruktor inicjalizujący akcję obiektu kalsy <code>Witcher</code>
+     */
     public Boot() {
         beginSession(20);
 
@@ -26,12 +31,12 @@ public class Boot{
         Tile GhoulTile = new Tile(0,0,64,64,TileType.Ghoul);
         Tile PotinTile = new Tile(0,0,64,64,TileType.Potion);
         Tile Background = new Tile(0,0,2064,2064,TileType.Background);
-        Texture background_4 = LoadTexture("textures/Background_4.jpg", "JPG", true);
 
-        Witcher witcher = new Witcher(WitcherTile.getTexture(),10, 10, 64, 64, 1f);
+        Witcher witcher = new Witcher(WitcherTile.getTexture(),5, 5, 64, 64, 1f);
         System.out.println("HP" + witcher.getHP());
+
         while (!Display.isCloseRequested()) {
-            //drawBackgroundQuad(background_4, 0,0,2064,2064);
+
             Background.Draw(0,0);
                 for (int x = 0; x < 20; x++) {
                     for (int y = 0; y < 20; y++) {
@@ -58,7 +63,6 @@ public class Boot{
                 if(result)
                 {
 
-                    Clock.update();
                     witcher.Draw();
                     witcher.move();
                     result = witcher.interact();
@@ -82,7 +86,3 @@ public class Boot{
         Display.destroy();
     }
 }
-
-
-//          witcher.Update();
-//         if(witcher.getPositionX()==witcher.destinationX && witcher.getPositionY()==witcher.destinationY)

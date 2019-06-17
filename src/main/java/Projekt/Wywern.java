@@ -1,9 +1,9 @@
 package Projekt;
 
 /**
- * Obiekt <code>Wywern</code> dziedziczący po <code>Aunit</code> implemętujący interfejs <code>ISpecial</code>
+ * Obiekt <code>Wywern</code> dziedziczący po <code>Aunit</code>
  */
-public class Wywern extends AUnit implements ISpecial{
+public class Wywern extends AUnit{
     /**
      *Konstruktor przypisujący stałe wartości klasy <code>Wywern</code>
      */

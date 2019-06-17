@@ -1,7 +1,7 @@
 package Projekt;
 
 /**
- * Obiekt <code>Drowner</code> dziedziczący po klasie <code>AUnit</code> implementuje <code>ISpecial</code>
+ * Obiekt <code>Drowner</code> dziedziczący po klasie <code>AUnit</code>
  */
 public class Drowner extends AUnit implements ISpecial{
     /**

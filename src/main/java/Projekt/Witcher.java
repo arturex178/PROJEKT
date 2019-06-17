@@ -1,14 +1,11 @@
 package Projekt;
-import org.lwjgl.Sys;
+
 import org.newdawn.slick.opengl.Texture;
-
 import java.util.Random;
-
-import static Projekt.Clock.Delta;
 import static Projekt.Construct.drawTransparentQuad;
-import static Projekt.Main.main;
 import static Projekt.Main.mainMap;
-/** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>, oraz implementuje interfejs <code>ISpecial</code>
+
+/** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>
  */
 public class Witcher extends AUnit{
     /**
@@ -32,9 +29,7 @@ public class Witcher extends AUnit{
     Potion potion = new Potion();
 
     /**
-
-     * @param texture
-     * Arczi opisz
+     * @param texture przechowuje teksturę Witcher
 
      * @param startPositionX
      * Odpowiada za pozycje startową witchera na mapie(oś X)
@@ -113,6 +108,8 @@ public class Witcher extends AUnit{
 
     /**
      * Funkcja walki pomiędzy witcherem i potworem
+     * @param enemy wprowadzenie przeciwnika, który wywodzi się z klasy <code>AUnit</code> do walki
+     * @return sprawdzenie czy Witcher żyje(ma dodatnie HP)
      */
     public boolean fight(AUnit enemy){
 
@@ -248,7 +245,7 @@ public class Witcher extends AUnit{
 
     }
     /**
-    Arczi
+    Uogólnina metoda <code>drawTransparentQuad</code> dla klasy Witcher
      */
     public void Draw()
     {
@@ -257,6 +254,7 @@ public class Witcher extends AUnit{
 
     /**
      * Funkcja odpowiada za interakcję obiektu klasy <code>Witcher</code> z zawartością pola na którym stanie
+     * @return zwraca true jeśli <code>Witcher</code> żyje(dodatnie HP)
      */
     public boolean interact(){
 
@@ -268,7 +266,6 @@ public class Witcher extends AUnit{
                 {
                     if(mainMap.field[i] instanceof AUnit && mainMap.field[i] != null){
                         result = fight((AUnit)mainMap.field[i]);
-                        //System.out.println("After fight");
                         if(result){
                             mainMap.field[i] = null;
                             setHowManyKilled(getHowManyKilled() + 1);
@@ -278,7 +275,6 @@ public class Witcher extends AUnit{
                     }
                     if(mainMap.field[i] instanceof Potion) {
                     this.setNumberOfPotions(getNumberOfPotions() + 1);
-                    //System.out.println("potion");
                         mainMap.MAP[getPositionX()][getPositionY()]=0;
                     return true;
                     }

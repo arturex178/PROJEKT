@@ -1,7 +1,12 @@
 package Projekt;
 
+/**
+ * Obiekt <code>Leshen</code> dziedziczący po <code>AUnit</code>
+ */
 public class Leshen extends AUnit implements ISpecial {
-
+    /**
+     * Konstruktor klasy <code>Leshen</code> ustawiający wartości cech obiektu
+     */
     public Leshen() {
         this.setHP(130);
         this.setDmgDown(20);
@@ -9,6 +14,9 @@ public class Leshen extends AUnit implements ISpecial {
 
     }
 
+    /**
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Leshen</code>
+     */
     @Override
     public void special() {
         if(getHP()>100){

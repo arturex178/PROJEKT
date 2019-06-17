@@ -2,7 +2,7 @@ package Projekt;
 
 import java.util.Random;
 /**
- * Obiekt Randomize
+ * Klasa Randomize
  */
 public class Randomize {
     /**
