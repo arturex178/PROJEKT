@@ -1,4 +1,5 @@
 package Projekt;
+import org.lwjgl.Sys;
 import org.newdawn.slick.opengl.Texture;
 
 import java.util.Random;
@@ -14,9 +15,13 @@ public class Witcher extends AUnit{
     private int width, height;
     private float speed;
     private Texture texture;
+    private int howManyKilled = 0;
+    Potion potion = new Potion();
+
+
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
-        this.setHP(5000);
+        this.setHP(500);
         this.setDmgDown(9);
         this.setDmgUp(12);
         this.setPositionX(startPositionX);
@@ -27,25 +32,31 @@ public class Witcher extends AUnit{
         this.speed = speed;
     }
 
+    public int getHowManyKilled() {
+        return howManyKilled;
+    }
 
+    public void setHowManyKilled(int howManyKilled) {
+        this.howManyKilled = howManyKilled;
+    }
 
     /*   public void Update() {
-        if (first)
-            first = false;
-        else
-        {
-            if(destinationX*64 != getPositionX()*64)
-            {
-                setPositionX(Delta() * speed);
-            }
-            if(destinationY*64 != getPositionY()*64)
-            {
-                setPositionY(Delta() * speed);
-            }
-        }
+                if (first)
+                    first = false;
+                else
+                {
+                    if(destinationX*64 != getPositionX()*64)
+                    {
+                        setPositionX(Delta() * speed);
+                    }
+                    if(destinationY*64 != getPositionY()*64)
+                    {
+                        setPositionY(Delta() * speed);
+                    }
+                }
 
-    }
-*/
+            }
+        */
     private Random rnd = new Random();
     public int getNumberOfPotions(){
         return this.numberOfPotions;
@@ -69,7 +80,12 @@ public class Witcher extends AUnit{
     @Override
     public void special()
     {
-
+        if(this.getHP()<this.getHP()*0.2 && numberOfPotions > 0)
+        {
+            this.setHP(this.getHP() + potion.getHP());
+            numberOfPotions--;
+            System.out.println("potion");
+        }
     }
 
     public void move()
@@ -111,6 +127,7 @@ public class Witcher extends AUnit{
     }
 
     public boolean interact(){
+
         boolean result;
             for(int i = 0; i < 400; i++)
             {
@@ -122,6 +139,7 @@ public class Witcher extends AUnit{
                         //System.out.println("After fight");
                         if(result){
                             mainMap.field[i] = null;
+                            setHowManyKilled(getHowManyKilled() + 1);
                         }
                         mainMap.MAP[getPositionX()][getPositionY()]=0;
                         return result;
@@ -133,10 +151,8 @@ public class Witcher extends AUnit{
                     return true;
                     }
                     if(mainMap.field[i] instanceof Sword) {
-                        System.out.println("sword");
-                        if((mainMap.field[i].getDmgUp() - mainMap.field[i].getDmgDown()) /2 >
-                                (this.getDmgUp() - this.getDmgDown()) /2){
-                            System.out.println("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                        if((mainMap.field[i].getDmgUp() + mainMap.field[i].getDmgDown()) /2 >
+                                (this.getDmgUp() + this.getDmgDown()) /2){
                             this.setDmgUp(mainMap.field[i].getDmgUp());
                             this.setDmgDown(mainMap.field[i].getDmgDown());
                         }

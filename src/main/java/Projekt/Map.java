@@ -30,7 +30,8 @@ public class Map {
                         if(currentPosition >=25 && currentPosition <50){
                             int dmgDown;
                             dmgDown = 10 + rnd.nextInt(41);
-                            field[howMany] = new Sword(dmgDown,dmgDown + rnd.nextInt(10)+5);
+                            field[howMany] = new Sword(dmgDown + rnd.nextInt(10)+5,dmgDown);
+                            System.out.println(field[howMany].getDmgUp() + "    " + field[howMany].getDmgDown());
                             field[howMany].setPositionX(x);
                             field[howMany].setPositionY(y);
                             howMany++;

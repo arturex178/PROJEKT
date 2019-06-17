@@ -14,6 +14,7 @@ public class Boot{
     boolean result = true;
     boolean first = true;
 
+
     public Boot() {
         beginSession(20);
 
@@ -56,10 +57,10 @@ public class Boot{
                 }
                 if(result)
                 {
+
                     Clock.update();
                     witcher.Draw();
                     witcher.move();
-                    System.out.println(witcher.getPositionX() + "  " + witcher.getPositionY() + "<- witcher");
                     result = witcher.interact();
                     System.out.println("HP" + witcher.getHP());
                 }
@@ -68,7 +69,7 @@ public class Boot{
                     if(first)
                     {
                         Display.destroy();
-                        Sys.alert("Result", "Witcher is dead!");
+                        Sys.alert("Result", "Witcher is dead!  Witcher killed: " + witcher.getHowManyKilled() + " monsters.");
                         System.exit(0);
                         first = false;
                     }
