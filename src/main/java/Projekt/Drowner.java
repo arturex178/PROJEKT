@@ -1,7 +1,12 @@
 package Projekt;
 
+/**
+ * Obiekt <code>Drowner</code> dziedziczący po klasie <code>AUnit</code> implementuje <code>ISpecial</code>
+ */
 public class Drowner extends AUnit implements ISpecial{
-
+    /**
+     *Konstruktor przypisujący stałe wartości klasy <code>Drowner</code>
+     */
     public Drowner()
     {
         this.setHP(40);
@@ -9,7 +14,9 @@ public class Drowner extends AUnit implements ISpecial{
         this.setDmgDown(8);
 
     }
-
+    /**
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Drowner</code>
+     */
     public void special() {
         if(this.getHP()<20) {
             setDmgUp(15);

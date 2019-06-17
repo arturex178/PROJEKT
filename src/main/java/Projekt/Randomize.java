@@ -1,12 +1,21 @@
 package Projekt;
 
 import java.util.Random;
-
+/**
+ * Obiekt Randomize
+ */
 public class Randomize {
-
+    /**
+     * Konstruktor domyślny
+     */
     public Randomize() {
     }
 
+    /**
+     * Funkcja rozlosowywuje liczby do tablice na podstawie których na mapie będą rozmieszczane obiekty
+     * @param map tablica przechowująca liczby odpowiadające obiektom na mapie
+     * @param size rozmiar tablicy
+     */
     public void getRandomObjects(int[][] map, int size)
     {
         Random rnd = new Random();

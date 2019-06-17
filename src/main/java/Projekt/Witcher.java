@@ -8,20 +8,48 @@ import static Projekt.Clock.Delta;
 import static Projekt.Construct.drawTransparentQuad;
 import static Projekt.Main.main;
 import static Projekt.Main.mainMap;
-
+/** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>, oraz implementuje interfejs <code>ISpecial</code>
+ */
 public class Witcher extends AUnit{
-
+    /**
+     * Odpowiada za przechowanie liczby mikstur leczniczych
+     */
     private int numberOfPotions = 0;
+    /**
+     * odpowiada za rozmiary grafiki reprezentującej wiedźmina
+     */
     private int width, height;
+    /**
+     *
+     */
     private float speed;
     private Texture texture;
+    /**
+     * Zlicza ilość pokonanych potworów
+     */
     private int howManyKilled = 0;
+
     Potion potion = new Potion();
 
+    /**
 
+     * @param texture
+     * Arczi opisz
+
+     * @param startPositionX
+     * Odpowiada za pozycje startową witchera na mapie(oś X)
+     * @param startPositionY
+     * Odpowiada za pozycje startową witchera na mapie(oś Y)
+     * @param width
+     * Rozmiar grafiki reprezentującej witchera(szerokość)
+     * @param height
+     * Rozmiar grafiki reprezentującej witchera(wysokość)
+     * @param speed
+     * Arczi
+     */
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
     {
-        this.setHP(500);
+        this.setHP(1000);
         this.setDmgDown(9);
         this.setDmgUp(12);
         this.setPositionX(startPositionX);
@@ -32,10 +60,18 @@ public class Witcher extends AUnit{
         this.speed = speed;
     }
 
+    /**
+     * Zwraca ilość pokonanych potworów
+     * @return ilość pokonanych potworów
+     */
     public int getHowManyKilled() {
         return howManyKilled;
     }
 
+    /**
+     * Ustawia ilość pokonanych potworów
+     * @param howManyKilled ilość pokonanych potworów
+     */
     public void setHowManyKilled(int howManyKilled) {
         this.howManyKilled = howManyKilled;
     }
@@ -58,14 +94,26 @@ public class Witcher extends AUnit{
             }
         */
     private Random rnd = new Random();
+
+    /**
+     * Zwraca ilość posiadanych mikstur
+     * @return ilość posiadanych mikstur
+     */
     public int getNumberOfPotions(){
         return this.numberOfPotions;
     }
 
+    /**
+     * Ustawia ilość posiadanych mikstur
+     * @param numberOfPotions ilość posiadanych mikstur
+     */
     public void setNumberOfPotions(int numberOfPotions){
         this.numberOfPotions = numberOfPotions;
     }
 
+    /**
+     * Funkcja walki pomiędzy witcherem i potworem
+     */
     public boolean fight(AUnit enemy){
 
         while(this.getHP() > 0 && enemy.ifAlive()) {
@@ -77,10 +125,13 @@ public class Witcher extends AUnit{
         return this.ifAlive();
     }
 
+    /**
+     * Determinuje specjalną umiejętność witchera(używanie mikstur w trakcie walki aby zwiększyć <code>HP</code>)
+     */
     @Override
     public void special()
     {
-        if(this.getHP()<this.getHP()*0.2 && numberOfPotions > 0)
+        if( numberOfPotions > 0)
         {
             this.setHP(this.getHP() + potion.getHP());
             numberOfPotions--;
@@ -88,9 +139,12 @@ public class Witcher extends AUnit{
         }
     }
 
+    /**
+     * Funkcja odpowiadająca za losowy ruch witchera po mapie
+     */
     public void move()
     {
-        switch (rnd.nextInt(4)){
+        switch (rnd.nextInt(8)){
 
             case 0:
                 if(getPositionY() != 19){
@@ -117,15 +171,93 @@ public class Witcher extends AUnit{
                     setPositionX(getPositionX() - 1);
                 }
                 else setPositionX(19);
+                break;
+            case 4:
+                if(getPositionX() != 19 && getPositionY() != 0){
+                setPositionX(getPositionX() + 1);
+                setPositionY(getPositionY() + 1);
+            }
+                else if(getPositionX() == 19 && getPositionY() != 0){
+                setPositionX(0);
+                setPositionY(getPositionY() + 1);
+            }
+            else if(getPositionX() != 19 && getPositionY() == 0){
+                setPositionX(getPositionX() + 1);
+                setPositionY(19);
+            }
+            else if(getPositionX() == 19 && getPositionY() == 0){
+                setPositionX(0);
+                setPositionY(19);
+            }
+            break;
+            case 5:
+                if(getPositionX() != 19 && getPositionY() != 19){
+                setPositionX(getPositionX() + 1);
+                setPositionY(getPositionY() - 1);
+            }
+                else if(getPositionX() == 19 && getPositionY() != 19){
+                setPositionX(0);
+                setPositionY(getPositionY() - 1);
+            }
+            else if(getPositionX() != 19 && getPositionY() == 19){
+                setPositionX(getPositionX() + 1);
+                setPositionY(0);
+            }
+            else if(getPositionX() == 19 && getPositionY() == 19){
+                setPositionX(0);
+                setPositionY(0);
+            }
+            break;
+            case 6:
+                if(getPositionX() != 0 && getPositionY() != 19){
+                setPositionX(getPositionX() - 1);
+                setPositionY(getPositionY() + 1);
+            }
+                else if(getPositionX() == 0 && getPositionY() != 19){
+                setPositionX(19);
+                setPositionY(getPositionY() + 1);
+            }
+            else if(getPositionX() != 0 && getPositionY() == 19){
+                setPositionX(getPositionX() - 1);
+                setPositionY(0);
+            }
+            else if(getPositionX() == 0 && getPositionY() == 19){
+                setPositionX(19);
+                setPositionY(0);
+            }
+            break;
+            case 7:
+                if(getPositionX() != 0 && getPositionY() != 0){
+                setPositionX(getPositionX() - 1);
+                setPositionY(getPositionY() - 1);
+            }
+                else if(getPositionX() == 0 && getPositionY() != 0){
+                setPositionX(19);
+                setPositionY(getPositionY() - 1);
+            }
+            else if(getPositionX() != 0 && getPositionY() == 0){
+                setPositionX(getPositionX() - 1);
+                setPositionY(19);
+            }
+            else if(getPositionX() == 0 && getPositionY() == 0){
+                setPositionX(19);
+                setPositionY(19);
+            }
+            break;
         }
 
     }
-
+    /**
+    Arczi
+     */
     public void Draw()
     {
         drawTransparentQuad(texture, getPositionX()*64, getPositionY()*64, width, height);
     }
 
+    /**
+     * Funkcja odpowiada za interakcję obiektu klasy <code>Witcher</code> z zawartością pola na którym stanie
+     */
     public boolean interact(){
 
         boolean result;
