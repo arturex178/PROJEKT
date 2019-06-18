@@ -4,7 +4,9 @@ import java.util.Random;
 import static Projekt.Main.sizeX;
 import static Projekt.Main.sizeY;
 
-
+/**
+ * Klasa, która odpowiada za rozmieszczenie położenie i tworzenie odpowiednich obiektów na tych miejscach
+ */
 public class Map {
     Random rnd = new Random();
     /**

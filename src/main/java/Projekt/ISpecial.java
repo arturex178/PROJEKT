@@ -1,7 +1,8 @@
 package Projekt;
 
     /**
-    * interfejs <code>ISpecial</code>
+    * interfejs zawierający deklaracje metod specjalnych dal każdej klasy implementującej
+     * i metody towarzyszące interakcji
     */
     public interface ISpecial {
     /**

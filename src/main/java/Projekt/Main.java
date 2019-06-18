@@ -3,7 +3,16 @@ package Projekt;
 import javax.swing.*;
 
 /**
- *klasa Main
+ * @author Artur Sobolewski
+ * @author Kacper Kucharczyk
+ * @author Krzysztof Puciłowski
+ *
+ *
+ */
+
+
+/**
+ * Klasa wykonawcza programu
  */
 public class Main
 {
