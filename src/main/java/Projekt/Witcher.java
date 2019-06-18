@@ -3,7 +3,7 @@ package Projekt;
 import org.newdawn.slick.opengl.Texture;
 import java.util.Random;
 import static Projekt.Construct.drawTransparentQuad;
-import static Projekt.Main.mainMap;
+import static Projekt.Main.*;
 
 /** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>. Obiekt klasy <code> Witcher </code> jest głównym obiektem symulacji, od jego zachowania zależy jej przebieg
  */
@@ -38,7 +38,7 @@ public class Witcher extends AUnit{
      */
     public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height)
     {
-        this.setHP(1000);
+        this.setHP(witcherHP);
         this.setDmgDown(9);
         this.setDmgUp(12);
         this.setPositionX(startPositionX);
@@ -106,6 +106,7 @@ public class Witcher extends AUnit{
         if( numberOfPotions > 0)
         {
             this.setHP(this.getHP() + potion.getHP());
+            System.out.println("                     "+this.getHP());
             numberOfPotions--;
             System.out.println("potion");
         }
@@ -116,106 +117,96 @@ public class Witcher extends AUnit{
      */
     public void move()
     {
-        switch (rnd.nextInt(8)){
+        switch (rnd.nextInt(8)) {
 
+            //Go 1 down
             case 0:
-                if(getPositionY() != 19){
+                if (getPositionY() != sizeY - 1) {
                     setPositionY(getPositionY() + 1);
-                }
-                else setPositionY(0);
+                } else setPositionY(0);
                 break;
-
+            //Go 1 right
             case 1:
-                if(getPositionX() != 19){
+                if (getPositionX() != sizeX - 1) {
                     setPositionX(getPositionX() + 1);
-                }
-                else setPositionX(0);
+                } else setPositionX(0);
                 break;
-
+            //Go 1 up
             case 2:
-                if(getPositionY() != 0){
+                if (getPositionY() != 0) {
                     setPositionY(getPositionY() - 1);
-                }
-                else setPositionY(19);
+                } else setPositionY(sizeY - 1);
                 break;
+            // Go 1 left
             case 3:
-                if(getPositionX() != 0){
+                if (getPositionX() != 0) {
                     setPositionX(getPositionX() - 1);
-                }
-                else setPositionX(19);
+                } else setPositionX(sizeX - 1);
                 break;
+            //Go 1 right 1 down
+            //góra, prawo
             case 4:
-                if(getPositionX() != 19 && getPositionY() != 0){
-                setPositionX(getPositionX() + 1);
-                setPositionY(getPositionY() + 1);
-            }
-                else if(getPositionX() == 19 && getPositionY() != 0){
-                setPositionX(0);
-                setPositionY(getPositionY() + 1);
-            }
-            else if(getPositionX() != 19 && getPositionY() == 0){
-                setPositionX(getPositionX() + 1);
-                setPositionY(19);
-            }
-            else if(getPositionX() == 19 && getPositionY() == 0){
-                setPositionX(0);
-                setPositionY(19);
-            }
-            break;
+                if (getPositionX() != sizeX - 1 && getPositionY() != 0) {
+                    setPositionX(getPositionX() + 1);
+                    setPositionY(getPositionY() - 1);
+                } else if (getPositionX() == sizeX - 1 && getPositionY() != 0) {
+                    setPositionX(0);
+                    setPositionY(getPositionY() - 1);
+                    setPositionX(getPositionX() + 1);
+                    setPositionY(sizeY - 1);
+                } else if (getPositionX() == sizeX - 1 && getPositionY() == 0) {
+                    setPositionX(0);
+                    setPositionY(sizeY - 1);
+                }
+                break;
+            //dół,prawo
             case 5:
-                if(getPositionX() != 19 && getPositionY() != 19){
-                setPositionX(getPositionX() + 1);
-                setPositionY(getPositionY() - 1);
-            }
-                else if(getPositionX() == 19 && getPositionY() != 19){
-                setPositionX(0);
-                setPositionY(getPositionY() - 1);
-            }
-            else if(getPositionX() != 19 && getPositionY() == 19){
-                setPositionX(getPositionX() + 1);
-                setPositionY(0);
-            }
-            else if(getPositionX() == 19 && getPositionY() == 19){
-                setPositionX(0);
-                setPositionY(0);
-            }
-            break;
+                if (getPositionX() != sizeX - 1 && getPositionY() != sizeY - 1) {
+                    setPositionX(getPositionX() + 1);
+                    setPositionY(getPositionY() + 1);
+                } else if (getPositionX() == sizeX - 1 && getPositionY() != sizeY - 1) {
+                    setPositionX(0);
+                    setPositionY(getPositionY() + 1);
+                } else if (getPositionX() != sizeX - 1 && getPositionY() == sizeY - 1) {
+                    setPositionX(getPositionX() + 1);
+                    setPositionY(0);
+                } else if (getPositionX() == 19 && getPositionY() == 19) {
+                    setPositionX(0);
+                    setPositionY(0);
+                }
+                break;
+            //dół, lewo
             case 6:
-                if(getPositionX() != 0 && getPositionY() != 19){
-                setPositionX(getPositionX() - 1);
-                setPositionY(getPositionY() + 1);
-            }
-                else if(getPositionX() == 0 && getPositionY() != 19){
-                setPositionX(19);
-                setPositionY(getPositionY() + 1);
-            }
-            else if(getPositionX() != 0 && getPositionY() == 19){
-                setPositionX(getPositionX() - 1);
-                setPositionY(0);
-            }
-            else if(getPositionX() == 0 && getPositionY() == 19){
-                setPositionX(19);
-                setPositionY(0);
-            }
-            break;
+                if (getPositionX() != 0 && getPositionY() != sizeY - 1) {
+                    setPositionX(getPositionX() - 1);
+                    setPositionY(getPositionY() + 1);
+                } else if (getPositionX() == 0 && getPositionY() != sizeY - 1) {
+                    setPositionX(sizeX - 1);
+                    setPositionY(getPositionY() + 1);
+                } else if (getPositionX() != 0 && getPositionY() == sizeY - 1) {
+                    setPositionX(getPositionX() - 1);
+                    setPositionY(0);
+                } else if (getPositionX() == 0 && getPositionY() == sizeY - 1) {
+                    setPositionX(sizeX - 1);
+                    setPositionY(0);
+                }
+                break;
+            //góra, lewo
             case 7:
-                if(getPositionX() != 0 && getPositionY() != 0){
-                setPositionX(getPositionX() - 1);
-                setPositionY(getPositionY() - 1);
-            }
-                else if(getPositionX() == 0 && getPositionY() != 0){
-                setPositionX(19);
-                setPositionY(getPositionY() - 1);
-            }
-            else if(getPositionX() != 0 && getPositionY() == 0){
-                setPositionX(getPositionX() - 1);
-                setPositionY(19);
-            }
-            else if(getPositionX() == 0 && getPositionY() == 0){
-                setPositionX(19);
-                setPositionY(19);
-            }
-            break;
+                if (getPositionX() != 0 && getPositionY() != 0) {
+                    setPositionX(getPositionX() - 1);
+                    setPositionY(getPositionY() - 1);
+                } else if (getPositionX() == 0 && getPositionY() != 0) {
+                    setPositionX(sizeX - 1);
+                    setPositionY(getPositionY() - 1);
+                } else if (getPositionX() != 0 && getPositionY() == 0) {
+                    setPositionX(getPositionX() - 1);
+                    setPositionY(sizeY - 1);
+                } else if (getPositionX() == 0 && getPositionY() == 0) {
+                    setPositionX(sizeX - 1);
+                    setPositionY(sizeY - 1);
+                }
+                break;
         }
 
     }
@@ -234,7 +225,7 @@ public class Witcher extends AUnit{
     public boolean interact(){
 
         boolean result;
-            for(int i = 0; i < 400; i++)
+            for(int i = 0; i < mainMap.field.length; i++)
             {
                 if(mainMap.field[i] != null && mainMap.field[i].getPositionX() == this.getPositionX() &&
                         mainMap.field[i].getPositionY() == this.getPositionY())

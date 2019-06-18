@@ -14,14 +14,15 @@ public class Randomize {
     /**
      * Funkcja rozlosowywuje liczby do tablicy na podstawie których na mapie będą rozmieszczane obiekty
      * @param map tablica przechowująca liczby odpowiadające obiektom na mapie
-     * @param size rozmiar tablicy
+     * @param sizeX ilość wierzy tablicy
+     * @param sizeY ilość kolumn tablicy
      */
-    public void getRandomObjects(int[][] map, int size)
+    public void getRandomObjects(int[][] map, int sizeX, int sizeY)
     {
         Random rnd = new Random();
-        for (int x = 0; x < size; x++)
+        for (int x = 0; x < sizeX; x++)
         {
-            for (int y = 0; y < size; y++)
+            for (int y = 0; y < sizeY; y++)
             {
                 if(map.length>=1)
                 map[x][y] = rnd.nextInt(101);

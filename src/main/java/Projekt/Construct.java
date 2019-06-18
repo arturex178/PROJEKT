@@ -18,20 +18,21 @@ public class Construct{
 
     /**
      * Metoda tworząca okno o nazwie "Simulation" o odpowiednich rozmiarach
-     * @param size opisuje długość i szerokość okna mapy
+     * @param sizeX opisuje długość i szerokość okna mapy
+     * @param sizeY opisuje szerokość okna mapy
      */
-    public static void beginSession(int size)
+    public static void beginSession(int sizeX, int sizeY)
     {
         Display.setTitle("Simulation");
         try {
-            Display.setDisplayMode(new DisplayMode( size*64, size*64));
+            Display.setDisplayMode(new DisplayMode( sizeX*64, sizeY*64));
             Display.create();
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(0, size*64, size*64, 0, 1, -1);
+        glOrtho(0, sizeX*64, sizeY*64, 0, 1, -1);
         glMatrixMode(GL_MODELVIEW);
         glEnable(GL_TEXTURE_2D);
     }

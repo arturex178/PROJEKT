@@ -9,7 +9,7 @@ public class Potion extends AProperties
      */
     public Potion()
     {
-        this.setHP(20);
+        this.setHP(40);
     }
 
 }
