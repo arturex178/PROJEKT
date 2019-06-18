@@ -42,8 +42,8 @@ public class Tile
     }
 
     /**
-     * Metoda pozwalająca dostnie obiekt typu Texture
-     * @return
+     * Metoda zwracająca obiekt typu Texture
+     * @return obiekt typu Texture
      */
     public Texture getTexture() {
         return texture;

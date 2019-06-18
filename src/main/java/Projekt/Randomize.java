@@ -2,7 +2,7 @@ package Projekt;
 
 import java.util.Random;
 /**
- * Klasa Randomize
+ * Klasa odpowiadająca za losowanie obiektów na mapie
  */
 public class Randomize {
     /**
@@ -12,7 +12,7 @@ public class Randomize {
     }
 
     /**
-     * Funkcja rozlosowywuje liczby do tablice na podstawie których na mapie będą rozmieszczane obiekty
+     * Funkcja rozlosowywuje liczby do tablicy na podstawie których na mapie będą rozmieszczane obiekty
      * @param map tablica przechowująca liczby odpowiadające obiektom na mapie
      * @param size rozmiar tablicy
      */

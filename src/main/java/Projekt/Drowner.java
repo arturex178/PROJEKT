@@ -15,7 +15,7 @@ public class Drowner extends AUnit implements ISpecial{
 
     }
     /**
-     * Klasa ustalająca specjalną umiejętność obiektu <code>Drowner</code>
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Drowner</code>, która zwięeksza obrażenia poniżej pewnego progu <code>HP</code>.
      */
     public void special() {
         if(this.getHP()<20) {

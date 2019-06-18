@@ -5,21 +5,17 @@ import java.util.Random;
 import static Projekt.Construct.drawTransparentQuad;
 import static Projekt.Main.mainMap;
 
-/** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>
+/** Obiekt <code>Witcher</code> reprezentuje witchera, jest to podklasa klasy <code>AUnit</code>. Obiekt klasy <code> Witcher </code> jest głównym obiektem symulacji, od jego zachowania zależy jej przebieg
  */
 public class Witcher extends AUnit{
     /**
-     * Odpowiada za przechowanie liczby mikstur leczniczych
+     * Odpowiada za przechowanie liczby mikstur leczniczych, których obiekt klasy <code>Witcher</code> używa aby zwiększyć ilość <code>HP</code>
      */
     private int numberOfPotions = 0;
     /**
-     * odpowiada za rozmiary grafiki reprezentującej wiedźmina
+     * Odpowiada za rozmiary grafiki reprezentującej obiekt klasy <code>Witcher</code>
      */
     private int width, height;
-    /**
-     *
-     */
-    private float speed;
     private Texture texture;
     /**
      * Zlicza ilość pokonanych potworów
@@ -39,10 +35,8 @@ public class Witcher extends AUnit{
      * Rozmiar grafiki reprezentującej witchera(szerokość)
      * @param height
      * Rozmiar grafiki reprezentującej witchera(wysokość)
-     * @param speed
-     * Arczi
      */
-    public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height, float speed)
+    public Witcher(Texture texture, int startPositionX, int startPositionY, int width, int height)
     {
         this.setHP(1000);
         this.setDmgDown(9);
@@ -52,7 +46,6 @@ public class Witcher extends AUnit{
         this.texture = texture;
         this.width = width;
         this.height = height;
-        this.speed = speed;
     }
 
     /**
@@ -70,24 +63,6 @@ public class Witcher extends AUnit{
     public void setHowManyKilled(int howManyKilled) {
         this.howManyKilled = howManyKilled;
     }
-
-    /*   public void Update() {
-                if (first)
-                    first = false;
-                else
-                {
-                    if(destinationX*64 != getPositionX()*64)
-                    {
-                        setPositionX(Delta() * speed);
-                    }
-                    if(destinationY*64 != getPositionY()*64)
-                    {
-                        setPositionY(Delta() * speed);
-                    }
-                }
-
-            }
-        */
     private Random rnd = new Random();
 
     /**
@@ -107,7 +82,7 @@ public class Witcher extends AUnit{
     }
 
     /**
-     * Funkcja walki pomiędzy witcherem i potworem
+     * Funkcja walki pomiędzy witcherem i potworem, kończy się w przypadku gdy <code>HP</code> któregoś z dwóch obiektów spadnie do zera.
      * @param enemy wprowadzenie przeciwnika, który wywodzi się z klasy <code>AUnit</code> do walki
      * @return sprawdzenie czy Witcher żyje(ma dodatnie HP)
      */
@@ -137,7 +112,7 @@ public class Witcher extends AUnit{
     }
 
     /**
-     * Funkcja odpowiadająca za losowy ruch witchera po mapie
+     * Funkcja odpowiada za ruch obiektu klasy <code>Witcher</code> po mapie poprzez losowanie jednego z 8 możliwych kierunków. Gdy obiekt będzie chciał wyjść poza tablice, zostanie przeniesiony na jej drugą stronę
      */
     public void move()
     {
@@ -253,8 +228,8 @@ public class Witcher extends AUnit{
     }
 
     /**
-     * Funkcja odpowiada za interakcję obiektu klasy <code>Witcher</code> z zawartością pola na którym stanie
-     * @return zwraca true jeśli <code>Witcher</code> żyje(dodatnie HP)
+     * Funkcja odpowiada za dobranie odpowiedniej interakcji obiektu klasy <code>Witcher</code> z zawartością pola na którym stanie w zależności od typu
+     * @return zwraca true jeśli <code>Witcher</code> żyje(dodatnie <code>HP</code>)
      */
     public boolean interact(){
 

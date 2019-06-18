@@ -12,10 +12,10 @@ public class Ghoul extends AUnit{
     }
 
     /**
-     * Klasa ustalająca specjalną umiejętność obiektu <code>Ghoul</code>
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Ghoul</code>, która zwiększa <code>HP</code> obiektu co turę.
      */
     @Override
-    public void special() {   //Standardowe leczenie +1 na ture, gdy poniżej 30HP leczenie +3 na ture
+    public void special() {
 
 
         if(this.getHP()<30)

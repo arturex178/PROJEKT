@@ -15,13 +15,13 @@ public class Wywern extends AUnit{
         }
 
     /**
-     * Klasa ustalająca specjalną umiejętność obiektu <code>Wywern</code>
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Wywern</code>, która zwiększa rozrzut możliwych obrażeń poniżej pewnego progu <code>HP</code>.
      */
     @Override
     public void special() {
         if(this.getHP()<50){
-            setDmgUp(15);
-            setDmgDown(10);
+            setDmgUp(45);
+            setDmgDown(1);
         }
     }
 

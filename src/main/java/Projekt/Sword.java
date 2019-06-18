@@ -1,6 +1,6 @@
 package Projekt;
 /**
-Obiekt <code>Sword</code> dziedziczący po <code>Aproperties</code>
+Obiekt <code>Sword</code> dziedziczący po <code>Aproperties</code>.
  */
 public class Sword extends AProperties{
     /**

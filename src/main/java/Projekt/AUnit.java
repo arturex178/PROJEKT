@@ -3,7 +3,7 @@ package Projekt;
 import java.util.Random;
 
 /**
- * Klasa <code>AUnit</code> dziedziczy po <code>AProperties</code> jest nadklasą dla <code>Witcher</code> , <code>Drowner</code> , <code>Ghoul</code> , <code>Leshen</code> , <code>Wywern</code> , oraz implementuje <code> ISpecial</code>
+ * Klasa <code>AUnit</code> dziedziczy po <code>AProperties</code> jest nadklasą dla <code>Witcher</code> , <code>Drowner</code> , <code>Ghoul</code> , <code>Leshen</code> , <code>Wywern</code> , oraz implementuje <code> ISpecial</code>.
   */
 public abstract class AUnit extends AProperties implements ISpecial {
 
@@ -11,7 +11,7 @@ public abstract class AUnit extends AProperties implements ISpecial {
     Random rnd = new Random();
 
     /**
-     * Sprawdza czy obiekt jest żyjący(czy ma dodatnie HP)
+     * Sprawdza czy obiekt żyje(czy ma dodatnie <code>HP</code>)
      * @return true albo false w zależności czy obiekt żyje
      */
     @Override
@@ -22,7 +22,7 @@ public abstract class AUnit extends AProperties implements ISpecial {
     }
 
     /**
-     * Losuje obrażenia z przedziału
+     * Losuje obrażenia z przedziału obrażeń obiektu.
      * @return zwraca ostateczną liczbę obrażeń
      */
     @Override

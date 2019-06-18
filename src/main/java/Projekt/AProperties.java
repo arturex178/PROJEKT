@@ -4,7 +4,7 @@ package Projekt;
 import org.newdawn.slick.opengl.Texture;
 
 /**
- * Klasa <code>AProperties</code> po której dziedziczy <code>AUnit</code> , <code>Sword</code> , <code>Potion</code>
+ * Klasa <code>AProperties</code> po której dziedziczy <code>AUnit</code> , <code>Sword</code> , <code>Potion</code>. Definiuje podstawowe metody i parametry z których korzystają wszystkie obiekty.
   */
 public abstract class AProperties{
 
@@ -15,20 +15,15 @@ public abstract class AProperties{
     private int positionY;
 
     /**
-     * Konstruktor domyślny
-     */
-    public AProperties(){}
-
-    /**
-     * ustawia HP obiektu
-     * @param HP odpowiada za HP obiektu
+     * Ustawia HP obiektu.
+     * @param HP Wartość na którą chcemy zmienić <code>HP</code>.
      */
     public void setHP(int HP){
         this.HP=HP;
     }
 
     /**
-     * Zwraca HP obiektu
+     * Zwraca HP obiektu.
      * @return zwraca HP obiektu
      */
     public int getHP(){
@@ -36,8 +31,8 @@ public abstract class AProperties{
     }
 
     /**
-     * Ustawia maksymalne obrażenia obiektu
-     * @param DmgUp odpowiada za maksymalne obrażenia obiektu
+     * Ustawia maksymalne obrażenia obiektu.
+     * @param DmgUp Wartość maksymalnych obrażeń obiektu, które chcemy ustawić.
      */
     public void setDmgUp(int DmgUp){
 
@@ -55,7 +50,7 @@ public abstract class AProperties{
 
     /**
      * Ustawia minimalne obrażenia obiektu
-     * @param DmgDown odpowiada za minimalne obrażenia obiektu
+     * @param DmgDown Wartość minimalnnych obrażeń obiektu, które chcemy ustawić.
      */
     public void setDmgDown(int DmgDown){
 
@@ -73,7 +68,7 @@ public abstract class AProperties{
 
     /**
      * Ustawia pozycję obiektu na mapie(współrzędna x)
-     * @param positionX odpowiada za pozycję obiektu na mapie(współrzędna x)
+     * @param positionX Odpowiada za pozycję obiektu na mapie(współrzędna x)
      */
     public void setPositionX(int positionX)
     {
@@ -92,7 +87,7 @@ public abstract class AProperties{
 
     /**
      * Ustawia pozycję obiektu na mapie (współrzędna Y)
-     * @param positionY odpowiada za pozycję obiektu na mapie (współrzędna Y)
+     * @param positionY Odpowiada za pozycję obiektu na mapie (współrzędna Y)
      */
     public void setPositionY(int positionY)
     {

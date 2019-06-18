@@ -1,7 +1,7 @@
 package Projekt;
 
 /**
- * Obiekt <code>Leshen</code> dziedziczący po <code>AUnit</code>
+ * Obiekt <code>Leshen</code> dziedziczący po <code>AUnit</code>.
  */
 public class Leshen extends AUnit implements ISpecial {
     /**
@@ -15,7 +15,7 @@ public class Leshen extends AUnit implements ISpecial {
     }
 
     /**
-     * Klasa ustalająca specjalną umiejętność obiektu <code>Leshen</code>
+     * Klasa ustalająca specjalną umiejętność obiektu <code>Leshen</code>, która zwiększa obrażenia powyżej pewnego progu <code>HP</code>.
      */
     @Override
     public void special() {

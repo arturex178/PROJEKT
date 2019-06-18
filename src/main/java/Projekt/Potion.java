@@ -1,6 +1,6 @@
 package Projekt;
 /**
- Obiekt <code>Potion</code> dziedziczący po <code>AProperties</code>
+ Obiekt <code>Potion</code> dziedziczący po <code>AProperties</code>. Służy do przechowywania wartości
  */
 public class Potion extends AProperties
 {
