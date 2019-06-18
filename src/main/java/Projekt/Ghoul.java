@@ -1,8 +1,10 @@
 package Projekt;
-
+/**
+ * Obiekt <code>Ghoul</code> dziedziczący po <code>AUnit</code>. Tworzy obiekt jednego z potworó.
+ */
 public class Ghoul extends AUnit{
     /**
-     * Obiekt <code>Ghoul</code> dziedziczący po <code>AUnit</code>
+     * Konstruktor klasy <code>Ghoul</code> przypisujące obiektowi stałe wartości statystyk.
      */
     public Ghoul()
     {

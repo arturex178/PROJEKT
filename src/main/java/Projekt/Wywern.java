@@ -1,7 +1,7 @@
 package Projekt;
 
 /**
- * Obiekt <code>Wywern</code> dziedziczący po <code>Aunit</code>
+ * Obiekt <code>Wywern</code> dziedziczący po <code>Aunit</code>, tworzy obiekty jednego z potworów.
  */
 public class Wywern extends AUnit{
     /**

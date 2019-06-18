@@ -7,15 +7,29 @@ import static Projekt.Main.sizeY;
 
 public class Map {
     Random rnd = new Random();
+    /**
+     * Tablica zawierająca wygenerowane losow liczby <code>int</code> na podstawie których tworzone są obiekty potworów.
+     */
     public int[][] MAP = new int[sizeX][sizeY];
+    /**
+     * Tablica zawierająca w sobie wszystkie obiekty znajdujące się na mapie.
+     */
     public AProperties[] field = new AProperties[sizeX * sizeY];
+    /**
+     * Zmienna zapisująca ilość potworów na mapie.
+     */
     private int howManyMonsters;
 
-        public void randomizeMap () {
+    /**
+     * Przypisuje obiekty wylosowanym wcześniej wartościom
+     */
+    public void randomizeMap () {
             Randomize createMap = new Randomize();
             createMap.getRandomObjects(MAP, sizeX, sizeY);
-
-            int currentPosition;
+        /**
+         * Zapisuje wartosć <code>int</code> z tablicy z wygenerowanymi losowo liczbami, na podstawie których tworzy konkretne obiekty w tablicy <ccde>field</ccde>
+         */
+        int currentPosition;
             int howMany=0;
 
             for (int x = 0; x < field.length; x++)
@@ -52,13 +66,14 @@ public class Map {
                             field[howMany].setPositionX(x);
                             field[howMany].setPositionY(y);
                             howMany++;
+                            howManyMonsters++;
                         }
                         if(currentPosition >=5 && currentPosition <25){
                             field[howMany] = new Potion();
                             field[howMany].setPositionX(x);
                             field[howMany].setPositionY(y);
                             howMany++;
-                            howManyMonsters++;
+
                         }
                         if(currentPosition >=35 && currentPosition <50){
                             int dmgDown;
@@ -74,7 +89,11 @@ public class Map {
             }
         }
 
-        public int getHowManyMonsters()
+    /**
+     * Zwraca ilość potworów umieszczonych na mapie
+     * @return ilość potworów umieszczonych na mapie
+     */
+    public int getHowManyMonsters()
         {
             return howManyMonsters;
         }

@@ -1,7 +1,7 @@
 package Projekt;
 
 /**
- * Obiekt <code>Leshen</code> dziedziczący po <code>AUnit</code>.
+ * Obiekt <code>Leshen</code> dziedziczący po <code>AUnit</code>. Tworzy obiekty jednego z potworó.
  */
 public class Leshen extends AUnit implements ISpecial {
     /**
